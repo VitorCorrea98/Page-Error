@@ -6,6 +6,7 @@
 /* <!--***NAV START***--> */
   nav{
     padding: 3% 6%;
+    grid-column: 3/4;
   }
 
   nav p{
@@ -18,26 +19,25 @@
 
 
 /* <!--***MAIN START***--> */
- img{
-    width: 400px;
-    height: 400px;
-    padding: 0 40px;
-    margin-right: 100px
- }
-
 main{
-    height: 80vh;
-   display: flex;
-   justify-content:center;
-   align-items: center;
-   
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+    padding-top: 60px;
 
-    
 }
+
+img{
+  width: 400px;
+  height: 400px;
+  grid-column: 2/3;
+}
+
 
 .text{
     display: flex;
     flex-direction: column;
+    grid-column: 3/4;
 
 }
 
@@ -65,3 +65,25 @@ main{
     margin-right: auto;
 }
 /* <!--*** MAIN END***-->    */
+
+
+
+
+@media only screen and (max-width:650px) {
+  body{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 1fr;
+    grid-template-areas:
+        "nav"
+        "main"
+    ;
+  }
+  
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
